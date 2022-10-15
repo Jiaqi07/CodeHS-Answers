@@ -1,0 +1,778 @@
+1.
+circle(35)
+forward(40)
+circle(35)
+forward(40)
+circle(35)
+forward(40)
+circle(35)
+forward(40)
+circle(35)
+forward(40)
+
+2. Shorter Dashed LIne
+penup()
+backward(200)
+pendown()
+forward(50)
+penup()
+forward(50)
+pendown()
+forward(50)
+penup()
+forward(50)
+pendown()
+forward(50)
+penup()
+forward(50)
+pendown()
+pendown()
+forward(50)
+penup()
+forward(50)
+
+3. Caterpiller
+circle(20)
+penup()
+forward(40)
+pendown()
+circle(20)
+penup()
+forward(40)
+pendown()
+circle(20)
+penup()
+forward(40)
+pendown()
+circle(20)
+penup()
+forward(40)
+pendown()
+circle(20)
+
+4 East, A and C, Up
+a.
+pendown()
+forward(50)
+left(90)
+forward(100)
+left(90)
+forward(50)
+left(90)
+forward(100)
+left(90)
+
+b.
+penup()
+backward(100)
+right(90)
+forward(200)
+pendown()
+backward(400)
+left(90)
+penup()
+forward(100)
+pendown()
+right(90)
+forward(400)
+left(90)
+penup()
+forward(100)
+pendown()
+right(90)
+backward(400)
+
+5. Loops let us make shapes of multiple sizes, 3 Lines, 8 times, 3 4 and 5, Recognized as keywords
+
+a. 
+penup()
+backward(200)
+
+for i in range(20):
+    pendown()
+    circle(10)
+    penup()
+    forward(20)
+
+Columns 2.0: 
+penup()
+backward(100)
+right(90)
+forward(200)
+
+for i in range(3):
+    pendown()
+    backward(400)
+    left(90)
+    penup()
+    forward(100)
+    right(90)
+    forward(400)
+
+2.5.2: Turn around, does not turn her, 0, circle's diameter 
+2.5.5:
+speed(5)
+
+for i in range(6):
+    forward(50)
+    left(60)
+
+2.5.6:
+speed(5)
+left(45)
+
+for i in range(4):
+    forward(100)
+    backward(100)
+    left(90)
+
+2.5.7:
+penup()
+setposition(-150,-200)
+for i in range(3):
+    pendown()
+    circle(50)
+    penup()
+    forward(100)
+setposition(-100,-100)
+for i in range(2):
+    pendown()
+    circle(50)
+    penup()
+    forward(100)
+setposition(-50, 0)    
+pendown()
+circle(50)
+penup()
+forward(100)
+
+2.6.2: Writeten for humans to read and understand, #, """
+2.6.4:
+"""
+CODE EXAMPLE HW
+"""
+penup()
+setposition(-150,-200)
+#Draw 3 bottom circles
+for i in range(3):
+    pendown()
+    circle(50)
+    penup()
+    forward(100)
+setposition(-100,-100)
+#Draw 2 middle circles
+for i in range(2):
+    pendown()
+    circle(50)
+    penup()
+    forward(100)
+setposition(-50, 0)    
+pendown()
+#Draw last circle
+circle(50)
+penup()
+
+2.7.2: make_square, draw_squares, 
+2.8.2: Each function only contains one command, A function name and commands to be performed, three_circles()
+
+2.8.4:
+speed(5)
+
+def bead():
+    pendown()
+    circle(10)
+    penup()
+    left(10)
+penup()
+setposition(0,-100)
+pendown()
+for i in range(36):
+    bead()
+    forward(20)
+
+2.8.5 hints:
+Square - circle(50, 360, 4) OR
+for i in range(4):
+        pendown()
+        forward(50)
+        left(90)
+
+speed(5)
+
+def draw_square():
+    pendown()
+    for i in range(4):
+        forward(50)
+        left(90)
+
+    right(90)
+    penup()
+    left(90)
+    forward(25)
+    left(90)
+    forward(50)
+    right(90)
+    
+def draw_circle():
+    pendown()
+    circle(25)
+    penup()
+    left(90)
+    forward(50)
+    right(90)
+    backward(25)
+    
+penup()
+setposition(-25,-200)
+for i in range(4):
+    draw_square()
+    draw_circle()
+
+
+2.9.2
+a.
+color(“yellow”)
+pensize(10)
+b.
+The color name must be in quotation marks
+c.
+begin_fill()
+circle(20)
+end_fill()
+d. Pentagon
+
+2.9.5:
+penup()
+setposition(-100, 0)
+def draw_loop_thingy():
+    for i in range(4):
+        color("green")
+        pensize(5)
+        pendown()
+        forward(50)
+        right(120)
+        color("blue")
+        forward(50)
+        color("red")
+        right(120)
+        forward(50)
+        penup()
+        left(180)
+        forward(50)
+        left(60)
+        
+pensize(5)
+left(60)
+pendown()
+draw_loop_thingy()
+
+2.9.6:
+def small_circle():
+    circle(10)
+    left(10)
+    penup()
+    forward(20)
+    pendown()
+
+# Main Code
+penup()
+backward(100)
+right(90)
+
+pendown()
+for i in range (12):
+    color("purple")
+    begin_fill()
+    small_circle()
+    end_fill()
+    color("blue")
+    begin_fill()
+    small_circle()
+    end_fill()
+    color("red")
+    begin_fill()
+    small_circle()
+    end_fill()
+penup()
+
+# Make it look good in the end
+setposition(0,0)
+left(90)
+color("purple")
+
+2.9.7:
+speed(7)
+
+def draw_square():
+    color("red")
+    begin_fill()
+    circle(60,360,4)
+    end_fill()
+
+def draw_semicircle():
+    color("yellow")
+    begin_fill()
+    circle(60,180)
+    end_fill()
+    
+def draw_pentagon():
+    color("green")
+    begin_fill()
+    circle(60,360,5)
+    end_fill()
+    
+def draw_circle():
+    color("blue")
+    begin_fill()
+    circle(60)
+    end_fill()
+
+# Main Code
+penup()
+setposition(65, 45)
+draw_circle()
+penup()
+setposition(-95,45)
+pendown()
+draw_square()
+penup()
+setposition(-95,-95)
+pendown()
+draw_semicircle()
+penup()
+setposition(65, -95)
+pendown
+left(180)
+draw_pentagon()
+
+2.10.2:Breaking the problem down into smaller parts, Using descriptive names for variables
+2.10.4:
+# """
+
+# This code will fill the canvas with light blue circles.
+
+# """
+
+# speed(0)
+
+# # This function will draw a row of 10 circles.
+
+# def draw_circle_row():
+#     for i in range(10):
+#         pendown()
+#         begin_fill()
+#         color("light blue")
+#         circle(20)
+#         end_fill()
+#         penup()
+#         forward(40)
+
+# def move_up_a_row():
+#     left(90)
+#     forward(40)
+#     right(90)
+#     backward(400)
+
+# # Send Tracy to starting position in bottom left corner.
+
+# penup()
+
+# setposition(-180,-200)
+
+# # Call circle drawing function
+
+# for i in range(10):
+
+#     draw_circle_row()
+    
+#     move_up_a_row()
+
+# setposition(-180,-200)
+
+# def make_highlight():
+#     for i in range(10):
+#         penup()
+#         forward(10)
+#         left(90)
+#         forward(20)
+#         pendown()
+#         color("white")
+#         circle(10, 90)
+#         penup()
+#         left(90)
+#         forward(30)
+#         left(90)
+#         forward(40)
+
+# for i in range(10):
+#     make_highlight()
+#     move_up_a_row()
+    
+"""
+This code will fill the canvas with light blue circles.
+
+Now add a function that will draw a white highlight on each bubble.
+"""
+speed(0)
+
+# This function will draw one row of 10 circles
+def make_highlight():
+    penup()
+    color("black")
+    circle(10, 90)
+    pendown()
+    color("white")
+    circle(10, 90, 4)
+    penup()
+    circle(10, 180, 4)
+    
+def draw_circle_row():
+    for i in range(10):
+        pendown()
+        begin_fill()
+        color("light blue")
+        circle(20)
+        end_fill()
+        make_highlight()
+        penup()
+        forward(40)
+
+
+# This function will move Tracy from end of row up to beginning of the row on top        
+def move_up_a_row():
+    left(90)
+    forward(40)
+    right(90)
+    backward(400)
+    
+# Send Tracy to starting position in bottom left corner
+penup()
+setposition(-180,-200)
+
+# Call circle drawing function 10 times to fill ten rows
+for i in range(10):
+    draw_circle_row()
+ 
+    move_up_a_row()
+
+2.10.5:
+speed(0)
+
+def draw_square():
+    pendown()
+    forward(50)
+    left(90)
+    forward(50)
+    left(90)
+    forward(50)
+    left(90)
+    forward(50)
+    left(90)
+    penup()
+    forward(50)
+penup()
+setposition(-200,-200)
+pendown()
+
+for i in range(8):
+    draw_square()
+left(90)
+forward(50)
+
+for i in range(7):
+    draw_square()
+left(90)
+forward(50)
+
+for i in range(7):
+    draw_square()
+left(90)
+forward(50)
+
+for i in range(6):
+    draw_square()
+-----------------------------------------------------
+
+2.11.2: Store information to use in our programs, 
+distance = 10
+forward(distance)
+left(90)
+distance = distance * 2
+forward(distance),
+square_length = 20
+
+for i in range(4):
+    for i in range(4):
+        forward(square_length)
+        left(90)
+    square_length = square_length * 2
+2.11.4:
+speed(0)
+circle_radius=25
+def center_circle():
+    right(90)
+    forward(25)
+    left(90)
+
+for i in range(4):
+    pendown()
+    circle(circle_radius)
+    penup()
+    center_circle()
+    circle_radius = circle_radius + 25
+
+2.11.5:
+speed(0)
+square_length=10
+distance=20
+
+def draw_square():
+    pendown()
+    for i in range(4):
+        forward(square_length)
+        left(90)
+        
+penup()
+setposition(-150,0)
+for i in range(5):
+    draw_square()
+    penup()
+    forward(distance)
+    square_length=square_length + 10
+    distance=distance+20
+
+--------------------------------------------------
+2.12.2: radius = int(input("What is the radius?: ")), user_color = input("Give a color: "), 
+
+2.12.4:
+speed(0)
+circle_radius=100
+
+def center_circle():
+    right(90)
+    forward(-25)
+    left(90)
+def draw_circle():
+    begin_fill()
+    color(color_choice)
+    circle(circle_radius)
+    end_fill()
+penup()    
+setposition(0,-100)
+for i in range(4):
+    pendown()
+    color_choice = input("What is the color of the circle? ")
+    draw_circle()
+    penup()
+    center_circle()
+    circle_radius = circle_radius - 25
+
+2.12.5:
+speed(0)
+square_length = int(input("How large should the squares be? (in pixels): "))
+
+def draw_square():
+    for i in range(4):
+        pendown()
+        forward(square_length)
+        right(90)
+        penup()
+        
+penup()
+setposition(100,200)
+draw_square()
+
+setposition(100,-100)
+draw_square()
+
+setposition(-200, 200)
+draw_square()
+
+setposition(-200, -100)
+draw_square()
+
+---------------------------------------------------------
+2.13.2: They allow us to tailor functions to be used in multiple situations, As many as we need, Parameters Answer Choice 2, 
+2.13.4: 
+speed(0)
+color_choice1 = input("What is the color of the first circle? ")
+color_choice2 = input("What is the color of the second circle? ")
+color_choice3 = input("What is the color of the third circle? ")
+color_choice4 = input("What is the color of the fourth circle? ")
+
+def draw_circle(user_color):
+    begin_fill()
+    color(user_color)
+    pendown()
+    circle(20)
+    penup()
+    forward(40)
+    end_fill()
+    
+# Main
+penup()
+setposition(-150,0)
+
+for i in range(2):
+    draw_circle(color_choice1)
+    draw_circle(color_choice2)
+    draw_circle(color_choice3)
+    draw_circle(color_choice4)
+
+2.13.5:
+speed(0)
+radius = int(input("What is the circle's radius?: "))
+square_color_choice = input("What is the color of the square? ")
+circle_color_choice = input("What is the color of the circle? ")
+
+def draw_square():
+    begin_fill()
+    for i in range(4):
+        pendown()
+        color(square_color_choice)
+        forward(radius*2)
+        right(90)
+    end_fill()
+
+def draw_circle():
+    pendown()
+    begin_fill()
+    color(circle_color_choice)
+    circle(radius)
+    end_fill()
+
+penup()
+setposition(-radius, radius)
+draw_square()
+penup()
+setposition(0, - radius)
+draw_circle()
+
+2.13.6:
+speed(0)
+first_radius = int(input("How big should the first circle be? "))
+
+def draw_circle():
+    pendown()
+    begin_fill()
+    color("gray")
+    circle(first_radius)
+    end_fill()
+    
+# Main
+penup()
+setposition(0,-200)
+for i in range(3):
+    draw_circle()
+    left(90)
+    forward(first_radius*2)
+    right(90)
+    first_radius = first_radius/2
+
+-------------------------------------------------------
+2.14.2: 0, [0, 1, 2], Tracy will turn 90 degrees to the right
+2.14.4:
+circle_radius = 20
+
+penup()
+setposition (0,-100)
+for i in range(7):
+    pendown()
+    circle(circle_radius,360,i)
+    circle_radius = circle_radius + 20
+    penup()
+
+---------------------------------------------------------
+2.15.2: [2, 4, 6, 8], 4 circles
+2.15.4:
+speed(0)
+
+for i in range(25,125,25):
+    pendown()
+    circle(i)
+    penup()
+    right(90)
+    forward(25)
+    left(90)
+
+speed(0)
+
+2.15.5:
+for i in range(10,60,10):
+    pendown()
+    forward(10)
+    left(90)
+    forward(i)
+    left(90)
+    forward(10)
+    left(90)
+    forward(i)
+    penup()
+    left(90)
+    forward(25)
+
+--------------------------------------------------------
+2.16.2: To have Tracy make decisions based on conditional statements, Tracy skips the commands under the if statement,
+if count > 0:
+  pendown()
+!=, 100 pixels, 
+2.16.4:
+def smile_mouth():
+    pendown()
+    pensize(6)
+    forward(4)
+    left(3)
+happy = input("Is he happy: ")
+
+if happy == "happy":
+    penup()
+    setposition(0,-100)
+    pendown()
+    begin_fill()
+    color("yellow")
+    circle(100)
+    end_fill()
+    penup()
+    setposition(-25,50)
+    pendown()
+    begin_fill()
+    color("black")
+    circle(10)
+    end_fill()
+    penup()
+    setposition(25,50)
+    pendown()
+    begin_fill()
+    color("black")
+    circle(10)
+    end_fill()
+    penup()
+    setposition(-65,0)
+    pendown()
+    pensize(5)
+    right(90)
+    circle(70, 180)
+
+2.16.5:
+penup()
+setposition (-50,0)
+count = 1
+
+def draw_square():
+    for i in range(4):
+        pendown()
+        forward(25)
+        left(90)
+    penup()
+    forward(35)
+
+for i in range(6):
+    if count % 2 == 0:
+       draw_square()
+       count = count - 1
+    else:
+        begin_fill()
+        color("black")
+        draw_square()
+        end_fill()
+        count = count + 1
