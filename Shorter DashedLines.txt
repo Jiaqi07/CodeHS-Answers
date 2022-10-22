@@ -1,3 +1,6 @@
+START
+-----------------------------
+
 1.
 circle(35)
 forward(40)
@@ -695,9 +698,9 @@ for i in range(25,125,25):
     forward(25)
     left(90)
 
+2.15.5:
 speed(0)
 
-2.15.5:
 for i in range(10,60,10):
     pendown()
     forward(10)
@@ -722,7 +725,7 @@ def smile_mouth():
     pensize(6)
     forward(4)
     left(3)
-happy = input("Is he happy: ")
+happy = input("Is he happy (Enter Happy): ")
 
 if happy == "happy":
     penup()
@@ -776,3 +779,299 @@ for i in range(6):
         draw_square()
         end_fill()
         count = count + 1
+
+--------------------------------------------------------------------------
+
+2.17.2:
+If it is raining, bring an umbrella. If not, wear sunglasses., unlimited,
+if count > 10:
+  forward(100)
+else:
+  forward(50),
+10 pixels
+
+2.17.4: 
+speed(0)
+rating = int(input("Pick a number between 1-10: "))
+
+def draw_x():
+    pensize(10)
+    color("red")
+    for i in range(4):
+        right(45)
+        forward(50)
+        backward(50)
+        right(45)
+        
+def draw_line():
+    pensize(10)
+    color("yellow")
+    forward(50)
+    backward(100)
+    
+def draw_checkmark():
+    color("green")
+    pensize(10)
+    left(45)
+    forward(75)
+    backward(75)
+    left(90)
+    forward(30)
+    
+# Main Code
+if rating <=4:
+    draw_x()
+elif rating<=7:
+    draw_line()
+else: 
+    draw_checkmark()
+
+2.17.5:
+speed(0)
+
+def smile_mouth():
+    pendown()
+    pensize(6)
+    forward(4)
+    left(3)
+happy = input("Is he happy (Enter happy or sad): ")
+
+if happy == "happy":
+    penup()
+    setposition(0,-100)
+    pendown()
+    begin_fill()
+    color("yellow")
+    circle(100)
+    end_fill()
+    penup()
+    setposition(-25,50)
+    pendown()
+    begin_fill()
+    color("black")
+    circle(10)
+    end_fill()
+    penup()
+    setposition(25,50)
+    pendown()
+    begin_fill()
+    color("black")
+    circle(10)
+    end_fill()
+    penup()
+    setposition(-65,0)
+    pendown()
+    pensize(5)
+    right(90)
+    circle(70, 180)
+elif happy == "sad":
+    penup()
+    setposition(0,-100)
+    pendown()
+    begin_fill()
+    color("yellow")
+    circle(100)
+    end_fill()
+    penup()
+    setposition(-25,50)
+    pendown()
+    begin_fill()
+    color("black")
+    circle(10)
+    end_fill()
+    penup()
+    setposition(25,50)
+    pendown()
+    begin_fill()
+    color("black")
+    circle(10)
+    end_fill()
+    penup()
+    setposition(70,-45)
+    pendown()
+    pensize(5)
+    left(90)
+    circle(70, 180)
+
+---------------------------------------------------------------
+2.18.2: To repeat code when the number of times to repeat is unknown, By using a condition that will never become false in a while loop, An infinite loop will occur, Spiral most complete
+2.18.4: 
+length = 50
+speed(0)
+def drawSquare(length):
+    backward(length/2)
+    for x in range(4):
+        forward(length)
+        left(90)
+
+while length <=350:
+    penup()
+    setposition(0, 0-length/2)
+    pendown()
+    drawSquare(length)
+    length += 50
+    
+penup()
+setposition(0, 0)
+
+2.18.5:
+def check():
+    pensize(10)
+    color("green")
+    penup()
+    backward(25)
+    right(45)
+    pendown()
+    forward(35)
+    left(90)
+    forward(75)
+
+secret_number = 5 # randint (1,10)
+print("You are to find the secret number between 1 and 10...")
+user_number = int(input("Guess? : "))
+
+while secret_number != user_number:
+  print("Incorrect")
+  user_number = int(input("Guess again: "))
+
+print("Correct")
+check()
+----------------------------------------------------------
+2.19.2: A only, If/else statements can be used inside for loops. small square increasing to the right top-D
+2.19.4:
+speed(0)
+secret_number = 5
+pensize(10)
+
+def green_check():
+    color("green")
+    penup()
+    backward(25)
+    right(45)
+    pendown()
+    forward(35)
+    left(90)
+    forward(75)
+    
+def draw_arrow():
+    color("red")
+    left(90)
+    forward(50)
+    left(45)
+    backward(25)
+    forward(25)
+    right(90)
+    backward(25)
+    forward(25)
+    left(45)
+    backward(100)
+    forward(50)
+    right(90)
+    
+user_number = int(input("Guess a number between 1 and 10: "))
+
+while user_number != secret_number:
+    if user_number < secret_number:
+        draw_arrow()
+    else:
+        left(180)
+        draw_arrow()
+        right(180)
+    user_number = int(input("Guess a number between 1 and 10: "))
+    clear()
+    
+green_check()
+
+2.19.5:
+speed(0)
+penup()
+row_value=0
+radius = 25
+  
+def move_to_row(num_blocks):
+    x_value = -((num_blocks*50)/2) + radius
+    y_value = (50*row_value)-200
+    setposition(x_value,y_value)
+
+
+def draw_block_row(num_blocks):
+    for i in range(num_blocks):
+        pendown()
+        circle(radius)
+        penup()
+        forward(50)
+
+
+num_blocks=int(input("How many blocks on the bottom row? (8 or less): "))
+
+for i in range(num_blocks):
+    move_to_row(num_blocks)
+    row_value = row_value+1
+    draw_block_row(num_blocks)
+    num_blocks = num_blocks-1
+
+2.19.6: 
+speed(0)
+penup()
+row_value = 0
+radius = 25
+  
+def move_to_row(num_blocks):
+    x_value = -((num_blocks*50)/2) + radius
+    y_value = (50*row_value)-200
+    setposition(x_value,y_value)
+
+
+def draw_block_row(num_blocks):
+    for i in range(num_blocks):
+        pendown()
+        circle(radius)
+        penup()
+        forward(50)
+
+
+num_blocks=int(input("How many blocks for the base? (8 or less): "))
+
+for i in range(num_blocks):
+    move_to_row(num_blocks)
+    row_value = row_value+1
+    draw_block_row(num_blocks)
+    num_blocks = num_blocks-1
+
+2.19.6:
+speed(0)
+penup()
+setposition(-200,-200)
+count = 1
+
+def draw_square():
+    for i in range(4):
+        pendown()
+        forward(40)
+        left(90)
+    penup()
+    forward(40)
+
+for i in range(10):
+    for i in range(10):
+        if count % 2 == 0:
+            begin_fill()
+            color("black")
+            draw_square()
+            end_fill()
+            count = count - 1
+        else:
+            begin_fill()
+            color("red")
+            draw_square()
+            end_fill()
+            count = count + 1
+    penup()
+    left(90)
+    forward(40)
+    left(90)
+    forward(400)
+    right(180)
+    count = count + 1
+--------------------------------------
+<END>
