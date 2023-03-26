@@ -1,0 +1,45 @@
+Do 4.5.2 4.5.4 
+round(x, 2), 3.000
+# Amount of food and number of people
+tons_of_food = 0.07
+num_people = 25
+
+# Determine how much food each person gets
+tons_of_food_per_person = tons_of_food / num_people
+print(tons_of_food_per_person)
+
+# Ask the user how much food they took
+tons_taken = float(input("How many tons of food did you take? "))
+if tons_taken == tons_of_food_per_person:
+    print("Good job, you took the right amount of food!")
+else:
+    print("You took the wrong amount of food!")
+
+5.3.2
+break
+continue
+
+5.3.7
+magic_number = 3
+while True:
+    guess = int(input("Enter a guess: "))
+    if guess == magic_number:
+        print("Correct!")
+        break
+    elif guess > magic_number:
+        print("Too high!")
+    else:
+        print("Too low!")
+
+5.4.2
+0
+1
+1
+2
+
+count = 10
+for i in range(3):
+    if count > 0:
+        print(i)
+else:
+    print(count)

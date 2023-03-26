@@ -1,0 +1,90 @@
+4.1.2: 2
+4.1.4: Put str() around bools
+4.1.5:
+needs_water = True
+needs_to_be_repotted = False
+
+print("Needs water: " + str(needs_water))
+print("Needs to be repotted: " + str(needs_to_be_repotted))
+---------------------------------------------------------------------
+4.2.2:
+if b:
+    print("b is True!"),
+if False:
+    print("hi")
+
+4.2.5:
+can_juggle = True
+
+# The code below has problems. See if
+# you can fix them!
+if can_juggle:
+    print("I can juggle!")
+else:
+    print("I can't juggle.")
+
+4.2.6:
+rain = True
+
+if rain:
+    print("I'm going to dance in the rain!")
+else:
+    print("I'm going to dance in the sun!")
+-------------------------------------------------------------------------------
+4.3.2: False, ?
+4.3.6:
+user_age = int(input("Age: "))
+
+if user_age >= 18:
+    print("You are old enough to vote!")
+else:
+    print("You are not old enough to vote!")
+4.3.7:
+user_number = int(input("Enter a number: "))
+
+if user_number > 0:
+    print("That number is positive!")
+elif user_number == 0:
+    print("That number is zero!")
+else:
+    print("That number is negative!")
+4.3.9:
+reservation_name = "Shonda"
+
+name = str(input("Enter your first name: "))
+
+if name == reservation_name:
+    print("Right this way!")
+else:
+    print("Sorry, we don't have a reservation under that name.")
+4.3.10:
+# This program simulates a single transaction -
+# either a deposit or a withdrawal - at a bank.
+initial_value = 1000
+type1 = "withdrawal"
+type2 = "deposit"
+
+type = input("Would you like to deposit or have a withdrawal? ")
+
+if type == type1:
+    print("How much would you like to withdraw? ")
+elif type == type2:
+    print("How much would you like to deposit? ")
+else:
+    print("Invalid transaction")
+
+if type == type1 or type == type2:
+    x = int(input("Enter amount here: "))
+
+    if type == type1:
+        print("You have this much money in your account left:")
+    
+    print(initial_value-x)
+    if type == type2:
+        print("You have this much money in your account left:")
+        print(initial_value+x)
+    
+    if type == type1 and x > 1000:
+        print ("You cannot have a negative balance! ")
+----------------------------------------------------------------
+4.4.2:

@@ -1,0 +1,106 @@
+Unit 7
+String Indexing:
+1: D
+2: A
+
+7.1.5:
+def initials(first, last): 
+    return first[0] + "." + last[0] + "."
+
+print(initials("Tracy", "Turtle"))
+print(initials("Peter", "Parker"))
+
+7.1.6:
+# update the function's body to return the 
+# first and last letter of the input concatenated together
+def sandwich(string):
+    return string[0] + string[-1]
+
+7.2.2:
++
+print(sign[:6] + "Birth" + sign[6:])
+
+my_string = "ABCDE"
+print(my_string[2:])
+
+7.2.6:
+# update the function body to return everything but the first letter
+def end_of_word(word):
+    return word[1:]
+
+print(end_of_word("something"))
+
+7.2.7:
+def replace_at_index(string, index):
+return string[0:index] + "-" + string[index + 1:]
+7.2.8:
+
+7.3.2: immutable
+Strings in Python can be replaced, but not modified.
+my_string = "hello!"
+
+7.3.5:
+# One of the two lines below will cause an error.
+# Each line is an attempt to replace the first
+# letter of myString with H. Comment out the
+# line you think is incorrect.
+# my_string[0] = "H"
+my_string = "H" + my_string[1:]
+
+print(my_string)
+
+7.4.2:
+my_string = "abcde"
+for letter in range(len(my_string)):
+    print(letter)
+5
+
+7.4.4:
+def name_length(name):
+    return len(name)
+
+7.4.7:
+word = "eggplant"
+
+# Give the word to spell
+print("Your word is: " + word + ".")
+
+# Spell the word with a for loop here!
+
+for i in word:
+    print(i + "!")
+
+7.4.8:
+# update this function to return the number of times `second` appears in `first`!
+def count_occurrences(e, d):
+    counter = 0
+    for checker in e:
+        if (checker == d):
+            counter = counter + 1
+    
+    return counter
+------------------------------------
+7.5.2: True, False
+7.5.5:
+# use `in` to determine if `word` contains any vowels!
+def contains_vowel(name):
+    return "a" in name or "e" in name or "i" in name or "o" in name or "u" in name
+-------------------------------
+7.6.2:
+s = "apple"
+x = s.find("l")
+print(x)
+
+lower
+
+7.6.4:
+# return the input capitalized and with an exclamation point!
+def add_enthusiasm(string):
+    return string.upper() + '!'
+
+7.6.8:
+# fill in the arguments and function body
+def name_contains(name, letter):
+    return name.find(letter) is not -1
+
+

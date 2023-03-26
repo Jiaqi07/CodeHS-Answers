@@ -1,0 +1,400 @@
+8.1.2: Tuples use parentheses to access individual elements, rather than square brackets., x = (1, 2, 3)
+8.1.7: 
+my_tuple = (0, 1, 2, "hi", 4, 5)
+
+# Your code here...
+my_tuple = my_tuple[:3] + (3,) + my_tuple[4:]
+
+print(my_tuple)
+
+8.1.8:
+# fill in the `citation` function to return the author's name in the correct format
+def citation(author_name):
+    return author_name[2] + ", " + author_name[0] + " " + author_name[1]
+
+8.1.9:
+# fill in this function to return the total of the three judges' scores!
+def calculate_score(judge_scores):
+    return judge_scores[0] + judge_scores[1] + judge_scores[2]
+
+8.1.10:
+import math
+
+# fill in this function to return the distance between the two points!
+def distance(first_point, second_point):
+    return math.sqrt(pow(abs(first_point[0]-second_point[0]), 2) + pow(abs(first_point[1]-second_point[1]), 2))
+---------------------------
+
+8.2.2: 
+my_list = [1, 2, 3, 4, 5]
+&&&&&&
+my_string = "hello"
+str_as_list = list(my_string)
+
+8.2.5:
+# fill in this function to return a list containing each character in the name
+def spell_name(name):
+    return list(name)
+
+8.2.7: 
+# fill in this function to greet the user!
+def greeting(user_info):
+    return "Hello, " + user_info.split()[0] + "! I also enjoy " + user_info.split()[2] + "!"
+---------------------------------------
+
+8.3.2:
+Good morning
+Good afternoon
+Good evening
+&&&
+name = "Tim"
+name_list = list(name)
+for index, value in enumerate(name_list):
+    print("Letter " + str(index+1) + ": " + value)
+
+8.3.5:
+# your function should return the maximum value in `my_list`
+def max_int_in_list(my_list):
+    maxNum = -100000
+    for num in my_list:
+        if(num > maxNum):
+            maxNum = num
+    return maxNum
+
+8.3.6:
+# this function should return the number of words that contain "owl"!
+def owl_count(text):
+    count = 0
+    text = text.lower().split()
+    
+    for i in range(len(text)):
+        if text[i].find("owl") > -1:
+            count += 1
+    return count
+
+8.3.7:
+def exclamation(text):
+    my_list = list(text)
+    output = ""
+    
+    for item in my_list:
+        if item == "i":
+            output = output + "!"
+        else:
+            output = output + item
+    return output
+
+8.3.8:
+user_string = input("Enter a string: ")
+
+def get_index():
+    while True:
+        try:
+            user_index = int(input("Enter an Index: "))
+            if user_index >= len(user_string):
+                print("Invalid Index")
+                continue
+            if user_index < -1:
+                print("Invalid Index")
+                continue
+        except ValueError:
+            print("Invalid Index")
+            continue
+        return user_index
+
+def get_string():
+    while True:
+        user_letter = input("Enter letter: ")
+        if user_letter.isupper():
+            print("Character must be a lowercase letter!")
+            continue
+        if len(user_letter) > 1:
+            print("Must be exactly one character!")
+            continue
+        return user_letter
+
+
+while True:
+    user_string = list(user_string)
+    returned_index = get_index()
+    if returned_index == -1:
+        break
+    returned_string = get_string()
+    user_string[returned_index] = returned_string
+    print("".join(user_string))
+
+8.3.9:
+def owl_count():
+    count = 0
+    report = []
+    text = input("Enter a sentence: ").lower()
+    
+    for index, word in enumerate(text.split()):
+        if word.find("owl") > -1:   
+            count += 1
+            report += [index,]
+    print("There were " + str(count) + """ words that contained "owl".""")
+    print("They occurred at indices: " + str(report))
+    
+owl_count()
+
+--------------------------------------------
+8.4.2: my_list.sort(),
+
+my_list.sort()
+my_list.reverse()
+my_list.remove("bananas")
+
+8.4.4:
+name_amount = int(input("How many names do you have? "))
+namelist = []
+
+for i in range (name_amount):
+    name = input("Name: ")
+    namelist.append(name)
+
+print ("First name: " + namelist[0])
+print ("Middle names: " + str(namelist[1:-1]))
+print ("Last name: " + namelist[-1])
+
+8.4.5:
+num_list = []
+sum = 0
+
+for i in range(5):
+    num = int(input("Number: "))
+    num_list.append(num)
+    print(num_list)
+    sum = int(num_list[i]) + sum
+print(sum)
+
+8.4.7:
+book_list = []
+
+for i in range(5):
+    book = input("Name: ")
+    book_list.append(book)
+book_list.sort()
+print(book_list)
+
+8.4.11:
+def remove_sort_reverse(my_list):
+    word = "eggplant"
+    while word in my_list:
+        my_list.remove(word)
+    my_list.sort()
+    my_list.reverse()
+    return my_list
+
+8.4.12:
+author_list = []
+
+for i in range(5):
+    name = input("Name: ")
+    author_list.append(name.split()[-1])
+
+author_list.sort()
+print(author_list)
+--------------------------
+9.1.2: 
+[2, 5, 7, 10]
+[[2, 5, 7, 10], [-3, ‘hello’, 9, ‘hi’]]
+
+9.1.6:
+def print_board(board):
+    for i in range(len(board)):
+        print(" ".join([str(x) for x in board[i]]))
+    
+my_grid = []
+for i in range(8):
+    my_grid.append([0] * 8)
+
+for row in range(8):
+    for col in range(8):
+        if row < 3 or row > 4:
+            my_grid[row][col] = 1
+print(print_board(my_grid))
+
+9.1.7: 
+def print_board(board):
+    for i in range(len(board)):
+        print(" ".join([str(x) for x in board[i]]))
+
+my_grid = []
+count = 1
+
+for i in range(8):
+    my_grid.append([0] * 8)
+
+for row in range(8):
+    count = count + 1
+    for col in range(8):
+        count = count + 1
+        if count % 2 == 0:
+            my_grid[row][col] = 1
+
+print(print_board(my_grid))
+
+9.1.8:
+# Pass this function a list of lists, and it will
+# print it such that it looks like the grids in
+# the exercise instructions.
+def print_board(board):
+    for i in range(len(board)):
+        print(" ".join([str(x) for x in board[i]]))
+    
+my_grid = []
+count = 1
+
+for i in range(8):
+    my_grid.append([0] * 8)
+
+for row in range(8):
+    count = count + 1
+    for col in range(8):
+        count = count + 1
+        if row < 3 or row > 4:
+            if count % 2 == 0:
+                my_grid[row][col] = 1
+
+print(print_board(my_grid))
+
+9.1.9:
+IDK
+
+--------------------
+9.2.2:
+[0, 2, 4, 6]
+[True, False, True, False, True, False]
+
+9.2.5:
+divisible_by_3 = [i % 3 == 0 for i in range(1, 11)]
+
+print(divisible_by_3)
+
+9.2.8:
+names = [
+    "Maya Angelou",
+    "Chimamanda Ngozi Adichie",
+    "Tobias Wolff",
+    "Sherman Alexie",
+    "Aziz Ansari"
+]
+
+# Your code here...
+print([name.split()[-1] for name in names])
+
+9.2.9:
+# Write your function here...
+
+list_of_strings = ["a", "2", "7", "zebra"]
+
+def safe_int(argument):
+    try:
+        return int(argument)
+    except ValueError:
+        return 0
+
+print([safe_int(x) for x in list_of_strings])
+-----------------------------
+9.3.2;
+x = 1
+y = 2
+z = 3
+my_list = [x, y, z]
+=====
+my_list = [1, 2, 3]
+x, y, z = my_list
+
+9.3.6:
+print((int(input("Number: ")), int(input("Number: "))))
+
+9.3.7:
+coordinate_pairs = []
+
+def slope(x1, x2, y1, y2):
+    return((y2 - y1) / (x2 - x1))
+
+for i in range(5):
+    x = int(input("Input x coordinate: "))
+    y = int(input("Input y coordinate:"))
+    coordinate_pairs.append((x,y))
+
+for i in range(4):
+    x1, y1 = coordinate_pairs[i]
+    x2, y2 = coordinate_pairs[i+1]
+    print("Slope between " + str(coordinate_pairs[i]) + " and " + str(coordinate_pairs[i + 1]) + ": " + str(slope(x1, x2, y1, y2)))
+
+9.3.9:
+first, last = input("First name: "), input("Last Name: ")
+
+print("Full name: " + first + " " + last)
+first, last = last, first
+
+print("Citation: " + first + ", " +last)
+---------------------------------------
+https://www.w3schools.com/python/python_dictionaries.asp
+9.4.2: 
+print(my_dictionary["Bo"])
+
+9.4.5:
+my_dict = {}
+
+while True:
+    name = input("Enter name: ")
+    
+    if name in my_dict:
+        print("Number: " + str(my_dict[name]))
+    elif name == "":
+        break
+    elif name not in my_dict:
+        number = input("Enter number: ")
+        my_dict[name] = number
+
+print(my_dict)
+
+9.4.6:
+dictionary = {} 
+
+text = input("Enter some text: ")
+text = text.split()
+
+for word in text: 
+    if word in dictionary: 
+        dictionary[word] = dictionary[word] + 1 
+    else: 
+        dictionary[word] = 1
+print(dictionary)
+
+------------------------
+9.5.2:
+yes, yes, yes
+
+9.5.6:
+def swap_lists(first, second):
+    for i in range(len(first)):
+        first[i], second[i] = second[i], first[i]
+
+9.5.7:
+def update_counts(count_dictionary, word):
+    if word in count_dictionary:
+        count_dictionary[word] = count_dictionary[word] + 1
+    else:
+        count_dictionary[word] = 1
+
+        
+dic = {}
+
+text = input("Enter some text: ")
+text_list = text.split()
+
+for word in text_list:
+    update_counts(dic, word)
+print(dic)
+
+-----------------
+8.1.2:
+The process of simplifying complicated data into manageable chunks, All of the above
+
+8.2.3:
+2, 4s place
